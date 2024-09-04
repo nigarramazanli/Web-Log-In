@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/axios/dist/axios.min.js" defer></script>
+    <link rel="stylesheet" href="elan_sales.css">
+</head>
+
+<body>
+    <div class="advertisement-section-container">
+
+        <div class="users-information-container">
+            
+               
+                    
+                        <form class="form" id="myForm" method="post" enctype="multipart/form-data">
+
+                            <div class="advertisement-container">
+                                <div class="elan-basliq">
+                                    <h1><span>Yeni Əmlak Haqqında</span></h1>
+                                </div>
+                                <div class="advertisement_body_fiveth_Side">
+                                    <div class="advertisement-body">
+                                        <div class="advertisement-body-left">
+                                            <div class="first-columns-labels new-estate-labels">
+                                            <label class="personal-inf label-characteristic" for=" person">Əmlakın növü*</label>
+                                            <label  class="city-inf label-characteristic" for=" city">Yerləşdiyi Ərazi*</label>
+                                            <label id="layihe_label" class="project-info label-characteristic" for="project-exist">Layihə</label>
+                                            <label id="layihe_teyin_label" class="construction-info label-characteristic" for="comstruction">Layihə Təyinatı</label>
+                                            <label id="mtk_label" class="residence-inf label-characteristic" for="residence">MTK*</label>
+                                            <label id="document_label" class="type_document-info label-characteristic" for="document">Əmlakın sənədi*</label>
+                                            <label id="rnumber-label" class="rooms-inf label-characteristic" for="rooms_number">Otaq Sayı*</label>
+                                            <label id="room_change_label" class="rooms-info label-characteristic" for="rooms_change">
+                                                        Otaq<br>
+                                                        dəyişdirilib
+                                                    </label>
+                                            </div>
+                                            <div class="first-column-right-side ">
+                                    <div class="first-select-container all-right-divs-columns right-divs-all">
+                                                    <select required name="building-type" id="building-type"  class="first-select">
+    
+                                                        <option disabled selected></option>
+    
+                                                        <option value="new-building">Yeni tikili</option>
+                                                        <option value="old-building">Köhnə tikili</option>
+                                                        <option value="office">Ofis</option>
+                                                        <option value="garden">Torpaq</option>
+                                                        <option value="qaraj">Qaraj</option>
+                                                    </select>
+                                                 
+                                                         <p class="validation-message"></p>
+    
+                                                </div>
+    
+                                    <div id="area-garden-id" class="second-input-column all-right-divs-columns right-divs-all">
+                                                        <select required class="city-select">
+    
+                                                            <option disabled selected></option>
+    
+                                                            <option value="">Bakı</option>
+                                                            <option value="">Sumqayit</option>
+                                                            <option value="">Ağdaş</option>
+                                                            <option value="">Ağdam</option>
+                                                            <option value="">Şəmkir</option>
+                                                            <option value="">Bakılı</option>
+                                                        </select>
+                                                       <p class="validation-message"></p>
+    
+                                                    </div>
+    
+    
+                                               
+                                <div class="project_exist all-right-divs-columns right-divs-all">
+    
+                                                    <select required class="project-select">
+    
+                                                        <option disabled selected></option>
+    
+                                                        <option value="">Var</option>
+                                                        <option value="">Yoxdur</option>
+                                                        <option value="">3</option>
+                                                        <option value="">4</option>
+                                                        <option value="">5</option>
+                                                        <option value="">6</option>
+                                                    </select>
+                                                    <p class="validation-message"></p>
+    
+                                                </div>
+                                <div class="construction_exist all-right-divs-columns right-divs-all">
+                                                    <select required class="construction-select">
+    
+                                                        <option disabled selected></option>
+    
+                                                        <option value="">Var</option>
+                                                        <option value="">Yoxdur</option>
+                                                        <option value="">3</option>
+                                                        <option value="">4</option>
+                                                        <option value="">5</option>
+                                                        <option value="">6</option>
+                                                    </select>
+                                                    <p class="validation-message"></p>
+    
+                                                </div>
+                                <div id="mtk" class="tween-input-column all-right-divs-columns right-divs-all">
+                                                    <select required class="residence-select">
+    
+                                                        <option disabled selected></option>
+    
+                                                        <option value="">Saray MTK</option>
+                                                        <option value="">Ag Şəhər</option>
+                                                        <option value="">Kristal Abşeron</option>
+                                                        <option value="">4</option>
+                                                        <option value="">5</option>
+                                                        <option value="">6</option>
+                                                    </select>
+                                                    <p class="validation-message"></p>
+    
+                                        
+                                    </div>
+    
+                                
+                                <div id="document_select" class="document_type">
+                                        <select required class="document-type-select all-right-divs-columns">
+    
+                                                            <option disabled selected></option>
+    
+                                                            <option value="">Var</option>
+                                                            <option value="">Yoxdur</option>
+                                                            <option value="">3</option>
+                                                            <option value="">4</option>
+                                                            <option value="">5</option>
+                                                            <option value="">6</option>
+                                                        </select>
+                                                        <p class="validation-message"></p>
+    
+                                 </div>
+      
+                                <div id="rooms_number" class="fourth-input-column all-right-divs-columns right-divs-all">
+                                                    <select required id="rooms-select">
+    
+                                                        <option disabled selected></option>
+    
+                                                        <option value="">1</option>
+                                                        <option value="">2</option>
+                                                        <option value="">3</option>
+                                                        <option value="">4</option>
+                                                        <option value="">5</option>
+                                                        <option value="">6</option>
+                                                    </select>
+                                                    <p class="validation-message"></p>
+    
+                                                   
+                                                </div>
+                                <div id="changing_room" class="rooms-change all-right-divs-columns right-divs-all">
+                                                    <select required class="room-change-select">
+    
+                                                        <option disabled selected></option>
+    
+                                                        <option value="">Var</option>
+                                                        <option value="">Yoxdur</option>
+                                                        <option value="">3</option>
+                                                        <option value="">4</option>
+                                                        <option value="">5</option>
+                                                        <option value="">6</option>
+                                                    </select>
+                                                    <p class="validation-message"></p>
+    
+                                                    
+    
+                                                </div>
+    
+    
+    
+                                              
+                                                
+                                            </div>
+                                                
+                                                 
+                                        </div>
+                                        <div class="advertisement-body-second-column">
+                                          <div class="second-columns-labels new-estate-labels">
+                                           <label id="sahe_label" class="city-inf label-characteristic" for="area-adver">Sahə*</label>
+                                           <label id="area_garden_label" class="areagarden-inf label-characteristic" for="area-garden">Torpaq Sahəsi*</label>
+                                           <label id="floor_label" class="floor-inf label-characteristic " for="floor">Mərtəbə*</label>
+                                           <label id="floor_size_label" class="floor-size-info label-characteristic" for="floor-size">Mərtəbə Sayı*</label>
+                                           <label id="type_repair_label" class="type_repair-info label-characteristic" for="repair">Təmirin növü*</label>
+                                           <label class="price-info label-characteristic" for="price-information">Qiymət*</label>
+                                           <label class="currency-info label-characteristic" for="currency">Valyuta</label>
+                                           <label class="service_price-info label-characteristic" for="service_price">Xidmət haqqı</label>
+                                           
+                                                                    
+    
+    
+    
+    
+    
+    
+    
+    
+                                          </div>
+                                <div class="second-column-right-side ">
+    
+                                                <div id="sahe-select" class="third-input-column">
+                                                    <input required class="area" type="number" value="" name="myArea" id="area-adver">
+                                                    <p class="validation-message"></p>
+    
+                                                </div>
+                                                <div  id="garden_information" class="fifth-input-column all-right-divs-columns right-divs-all">
+                                                    <div class="validation-message"></div>
+                                                    <input class="garden" type="number" value="" name="myGarden" id="area-garden">
+                                                </div>
+                                    <div id="floor-number" class="eleventh-input-column all-right-divs-columns">
+                                                    <select required class="floor-select">
+    
+                                                            <option disabled selected></option>
+    
+                                                            <option value="">1</option>
+                                                            <option value="">2</option>
+                                                            <option value="">3</option>
+                                                            <option value="">4</option>
+                                                            <option value="">5</option>
+                                                            <option value="">6</option>
+                                                        </select>
+                                                        
+                                                </div>
+    
+                                    <div id="floor-size" class="twelve-input-column all-right-divs-columns">
+                                                        <select required class="floor-size-select">
+    
+                                                            <option disabled selected></option>
+    
+                                                            <option value="">1</option>
+                                                            <option value="">2</option>
+                                                            <option value="">3</option>
+                                                            <option value="">4</option>
+                                                            <option value="">5</option>
+                                                            <option value="">6</option>
+                                                        </select>
+    
+                                                 </div>
+    
+                                    <div id="temir_tipi" class="repair_type all-right-divs-columns">
+                                                        <select required class="repair-type-select">
+    
+                                                            <option disabled selected></option>
+    
+                                                            <option value="">Təmirli</option>
+                                                            <option value="">Təmirsiz</option>
+                                                            <option value="">3</option>
+                                                            <option value="">4</option>
+                                                            <option value="">5</option>
+                                                            <option value="">6</option>
+                                                        </select>
+                                    </div>
+                                    <div class="seventh-input-column all-right-divs-columns">
+                                        <input required class="priceinformation " type="number" value="" name="priceinfo" id="price-information">
+                                    </div>
+                                    <div class="currency_exist all-right-divs-columns">
+                                        <select required class="currency-select">
+    
+                                            <option disabled selected></option>
+    
+                                            <option value="">Var</option>
+                                            <option value="">Yoxdur</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                            <option value="">5</option>
+                                            <option value="">6</option>
+                                        </select>
+                                    </div>
+                                    <div class="service_price_exist all-right-divs-columns">
+                                        <select required class="service_price-select">
+    
+                                            <option disabled selected></option>
+    
+                                            <option value="">Var</option>
+                                            <option value="">Yoxdur</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                            <option value="">5</option>
+                                            <option value="">6</option>
+                                        </select>
+                                    </div>
+                                               
+                                                    
+                                                    
+                                </div>
+    
+                                        </div>
+                                        <div class="advertisement-body-right-side">
+                                         <div class="first-columns-labels new-estate-labels">
+                                        
+                                         <label class="refresh-time-inf label-characteristic" for="refresh">Yenilənmə tarixi</label>
+                                         <label class="sales-time-inf label-characteristic" for="sales">Satış tarixi</label>
+                                         <label class="owner-home__label label-characteristic" for="owner-home">Kredit</label>
+                                         <label class="credit_type_label label-characteristic " for="credit_select_id">Kredit Növü</label>
+                                         <label class="credit_time_label label-characteristic " for="credit_time_id">Kredit Müddəti</label>
+                                         <label class="ilkin_odenish_label label-characteristic " for="ilkin_odensh_id">İlkin Ödəniş</label>
+    
+                                         <label class="ayliq_odenish_label label-characteristic " for="ayliq_odenish_id">Aylıq Ödəniş</label>
+    
+    
+                                    
+    
+                                         </div>
+                                         <div class="third-side-container">
+                                    
+                                    
+    
+                                    <div class="refresh-time all-right-divs-columns">
+                                        <input required class="refreshing-time" type="date" value="" name="refreshingTime" id="refresh">
+                                    </div>
+                                    <div class="sales-time all-right-divs-columns">
+                                        <input required class="saling-time" type="date" value="" name="salesTime" id="sales">
+                                    </div>
+                                    <div class="credit-container all-right-divs-columns">
+                                        <input required class="radio_input" type="checkbox" value="myHome" name="myInput" id="owner-home">
+                                    </div>
+                                    <div class="credit_type all-right-divs-columns">
+                                        <select required id="credit_select_id" class="credit_select">
+    
+                                            <option disabled selected></option>
+    
+                                            <option value="">Var</option>
+                                            <option value="">Yoxdur</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                            <option value="">5</option>
+                                            <option value="">6</option>
+                                        </select>
+                                    </div>
+                                    <div class="credit_time all-right-divs-columns">
+                                        <input required class="credit_time_input" type="number" value="" name="creditTime" placeholder="0" id="credit_time_id">
+                                    </div>
+                                    <div class="ilkin_odenish all-right-divs-columns">
+                                        <input required class="ilkin_odenish_input" type="number" value="" name="odenishIlkin" id="ilkin_odensh_id" placeholder="0">
+                                    </div>
+                                    <div class="ayliq_odenish all-right-divs-columns">
+                                        <input required class="ayliq_odenish_input" type="number" value="" name="ayliqOdenis" id="ayliq_odenish_id" placeholder="0">
+                                    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+                                    
+                                         </div>
+                                                
+    
+                                                
+    
+                                        </div>
+                                        <div class="advertisement_fourth_side">
+                                            <div class="fourth_column_images">
+                                                <img src="file:///C:/Users/ASUS/Downloads/172473_globe_global_internet_icon.svg" alt="">
+                                                <img src="file:///C:/Users/ASUS/Downloads/8680090_fire_fill_icon.svg" alt="">
+                                                <img src="file:///C:/Users/ASUS/Downloads/6586101_analytics_chart_diagram_pie_icon%20(1).svg" alt="">
+                                                <img src="file:///C:/Users/ASUS/Downloads/1378841_fireplace_house_fire_home_interior_icon.svg" alt="">
+                                                <img src="file:///C:/Users/ASUS/Downloads/3668833_maintenance_repair_service_icon.svg" alt="">
+                                                <img src="file:///C:/Users/ASUS/Downloads/2639785_businessman_icon%20(1).svg" alt="">
+                                                <img src="file:///C:/Users/ASUS/Downloads/8961089_garage_smart%20home_smart%20garage_building_icon.svg" alt="">
+                                                <img src="file:///C:/Users/ASUS/Downloads/9104109_toggle_switch_on_off_turn_icon.svg" alt="">
+    
+                                            </div>
+                                            <div class="fourth_column_labels">
+                                                <label id="gas_label" class="gas-info label-characteristic" for="gas">Qaz*</label>
+                                                <label id="qaraj_label" class="qaraj-info label-characteristic" for="qaraj">Qaraj*</label>
+                                                <label id="equipment_label" class="equipment-info label-characteristic" for="equipment">Əşyalar*</label>
+                                                <label class="menbe__label label-characteristic" for="menbe_checkbox">Mənbə</label>
+    
+                                                <label class="ecsclusive__label label-characteristic" for="ecsclusive-checkbox">Ekslüziv</label>
+                                                <label class="partial_payment__label label-characteristic" for="hisseli_checkbox">Hissəli/Ö</label>
+                                                <label class="IsTemir__label label-characteristic" for="temirdedir_checkbox">Təmirdədir?</label>
+                                                <label class="deactive__label label-characteristic" for="deactive-checkbox">Status</label>
+    
+    
+    
+                                            </div>
+                                            <div class="fourth_column_inputs">
+                                                <div id="gas_input" class="gas_exist all-right-divs-columns three_inputs_divs">
+                                                    <label for="gas_input_label1">
+                                                        <input required type="radio" name="gas" value="Bəli" id="gas_input_label1">
+                                                        Bəli
+    
+                                                    </label>
+                                                    <label for="gas_input_label2">
+                                                        <input required type="radio" name="gas" value="Xeyr" id="gas_input_label2">
+                                                        Xeyr
+                                                    </label>
+                                                    <label for="gas_input_label3">
+                                                        <input required type="radio" name="gas" id="gas_input_label3" value="Seçilməyib">
+                                                        Seçilməyib
+                                                    </label>
+                                                    </div>
+                                                <div id="qaraj_input" class="qaraj_exist all-right-divs-columns three_inputs_divs">
+                                                          <label for="qaraj_input_label1">
+                                                            <input type="radio" id="qaraj_input_label1" name="garage" value="Bəli">
+                                                            Bəli
+                                                          </label> 
+                                                          <label for="qaraj_input_label2">
+                                                            <input type="radio" name="garage" id="qaraj_input_label2" value="Xeyr">
+                                                            Xeyr
+                                                        </label>
+                                                        <label for="qaraj_input_label3">
+                                                            <input required type="radio" id="qaraj_input_label3" name="garage" value="Seçilməyib">
+                                                            Seçilməyib
+                                                        </label>
+                                                    </div>
+                                                    <div id="evEsyalari_input" class="ev_esyasi_exist all-right-divs-columns three_inputs_divs">
+                                                        <label for="evEsyalari_input_label1">
+                                                          <input type="radio" id="evEsyalari_input_label1" name="evEsyalari" value="Bəli">
+                                                          Bəli
+                                                        </label> 
+                                                        <label for="evEsyalari_input_label2">
+                                                          <input type="radio" name="evEsyalari" id="evEsyalari_input_label2" value="Xeyr">
+                                                          Xeyr
+                                                      </label>
+                                                      <label for="evEsyalari_input_label3">
+                                                          <input required type="radio" id="evEsyalari_input_label3" name="evEsyalari" value="Seçilməyib">
+                                                          Seçilməyib
+                                                      </label>
+                                                  </div>
+    
+                                                  <div id="menbe_input" class="menbe_exist all-right-divs-columns three_inputs_divs">
+                                                    <label for="menbe_input_label1">
+                                                      <input  type="radio" id="menbe_input_label1" name="menbe" value="Bəli">
+                                                      Bəli
+                                                    </label> 
+                                                    <label for="menbe_input_label2">
+                                                      <input  type="radio" name="menbe" id="menbe_input_label2" value="Xeyr">
+                                                      Xeyr
+                                                  </label>
+                                                  <label for="menbe_input_label3">
+                                                      <input
+                                                      required type="radio" id="menbe_input_label3" name="menbe" value="Seçilməyib">
+                                                      Seçilməyib
+                                                  </label>
+                                              </div>
+                                              <div id="ecslusive_input" class="ecslusive_exist two_inputs_divs all-right-divs-columns">
+                                                <label for="ecslusive_input_label1">
+                                                  <input type="radio" id="ecslusive_input_label1" name="ecslusive" value="Bəli">
+                                                  Bəli
+                                                </label> 
+                                                <label for="ecslusive_input_label2">
+                                                  <input required type="radio" name="ecslusive" id="ecslusive_input_label2" value="Xeyr">
+                                                  Xeyr
+                                              </label>
+                                            
+                                          </div>
+                                          <div id="hisseli_odeme_input" class="hisse_exist all-right-divs-columns two_inputs_divs">
+                                            <label for="hisseli_odeme_input_label1">
+                                              <input type="radio" id="hisseli_odeme_input_label1" name="hisseliOdeme" value="Bəli">
+                                              Bəli
+                                            </label> 
+                                            <label for="hisseli_odeme_input_label2">
+                                              <input required
+                                               type="radio" name="hisseliOdeme" id="hisseli_odeme_input_label2" value="Xeyr">
+                                              Xeyr
+                                          </label>
+                                        
+                                      </div>
+                                      <div id="temir_input" class="temir_exist all-right-divs-columns two_inputs_divs">
+                                        <label for="temir_input_label1">
+                                          <input type="radio" id="temir_input_label1" name="temir" value="Bəli">
+                                          Bəli
+                                        </label> 
+                                        <label for="temir_input_label2">
+                                          <input required type="radio" name="temir" id="temir_input_label2" value="Xeyr">
+                                          Xeyr
+                                      </label>
+                                    </div>
+    
+                                  <div id="status_input" class="status_exisd all-right-divs-columns two_inputs_divs">
+                                    <label for="status_input_label1">
+                                      <input type="radio" id="status_input_label1" name="status" value="Bəli">
+                                      Bəli
+                                    </label> 
+                                    <label for="status_input_label2">
+                                      <input required type="radio" name="status" id="status_input_label2" value="Xeyr">
+                                      Xeyr
+                                  </label>
+                                
+                              </div>
+                              
+                            
+    
+                                                    
+    
+                                            </div>
+    
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="advertisement_fiveth_side">
+                                        <div class="fiveth_column_images">
+                                            <img src="file:///C:/Users/ASUS/Downloads/1688864_geo_location_map_optimization_place_icon%20(5).svg" alt="">
+                                            <img src="file:///C:/Users/ASUS/Downloads/5854057_education_memo_notes_pad_reminder_icon%20(3).svg" alt="">
+                                        </div>
+                                        <div class="fiveth_column_inputs">
+                                                <input class="location_input" type="text">
+                                                                  
+                                         <input type="text" class="note_container">
+    
+    
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <!-- <div class="line-bottom"></div> -->
+                            <div class="elan-basliq-2">
+                                <h1><span>İstifadəçi haqqında məlumat</span></h1>
+                            </div>
+
+                          
+                <body>
+
+                    <div class="container">
+                        <div class="tab tab-2">
+                            <div class="inputs-tel-name-relative">
+                                Ad  <input type="text" name="fname" id="fname"> 
+                                Əlaqədar Şəxs <select type="text" name="trelative" id="trelative">
+                                    <option value="Mülkiyyətçi">Mülkiyyətçi</option>
+                                    <option value="Əmisi">Əmisi</option>
+                                    <option value="Dayısı">Dayısı</option>
+
+
+                                </select>
+                                
+                                Nömrə <input type="tel" name="itel" id="itel">
+                                Danışıldı <select type="text" name="telaqe" id="telaqe">
+                                    <option value="Zənglə">Zənglə</option>
+                                    <option value="WhatsAppla">WhatsAppla</option>
+                                    <option value="Yanlız Mesajla">Yanlız mesajla</option>
+
+
+                                </select>
+                                
+                            </div>
+
+                            <div class="button-third-row">
+                                <button type="button" name="button" id="btn" value="Add" onclick="addHtmlTableRow()" class="btn-information btn-primary">Əlavə et</button>
+                                <button type="button" name="button" id="btn" value="Edit" onclick="editHtmlTbleSelectedRow()" class="btn-information btn-primary">Edit</button>
+                                <button type="button" name="button" id="btn" value="Remove" onclick="removeSelectedRow()" class="btn-information btn-primary">Sil</button>
+                                <button type="button" name="button" id="btn" value="Differ" onclick="differRow()" class="btn-information btn-primary">Seç</button>
+
+                            </div>
+                        </div>
+                        <div class="tab tab-1">
+                            <div class="tab-1-table">
+                            <table id="table" border="1">
+                                    <tr id="first-tr">
+                                    <th class="three-inputs-username">Ad</th>
+                                    <th class="three-inputs-mulkiyyetci">Əlaqədar Şəxs</th>
+                                    <th class="three-inputs-telephone">Nömrə</th>
+                                    <th class="three-inputs-type">Danışıldı</th>
+
+
+                                </tr>
+                                <tr>
+                                    <td>A1</td>
+                                    <td>B1</td>
+                                    <td>10</td>
+                                    <td>10</td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>A3</td>
+                                    <td>B3</td>
+                                    <td>30</td>
+                                    <td>10</td>
+
+                                </tr>
+                                <tr>
+                                    <td>A2</td>
+                                    <td>B2</td>
+                                    <td>20</td>
+                                    <td>10</td>
+
+
+                                </tr>
+                            </table>
+                            </div>
+                            <button id="submitButton" type="submit" class="btn-qeydiyyat">Qeydiyyatdan keç</button>
+                        </div>
+                      
+                    </div>
+                    <div class="line-bottom"></div>
+
+
+                    <script>
+                        var rIndex,
+                            table = document.getElementById("table");
+
+                        // check the empty input
+                        function checkEmptyInput() {
+                            var isEmpty = false,
+                                fname = document.getElementById("fname").value,
+                                trelative = document.getElementById("trelative").value,
+                                itel = document.getElementById("itel").value;
+                                telaqe = document.getElementById("telaqe").value;
+
+
+                            if (fname === "") {
+                                alert("Ad hissənə doldurun");
+                                isEmpty = true;
+                            } else if (trelative === "") {
+                                alert("Əlaqədar şəxsi doldurun");
+                                isEmpty = true;
+                            } else if (itel === "") {
+                                alert("Nömrəni daxil edin");
+                                isEmpty = true;
+                            }
+                            else if (telaqe === "") {
+                                alert("Əlaqə tipini daxil edin");
+                                isEmpty = true;
+                            }
+                              
+                            return isEmpty;
+                        }
+
+                        // add Row
+                        function addHtmlTableRow() {
+                            // get the table by id
+                            // create a new row and cells
+                            // get value from input text
+                            // set the values into row cell's
+                            if (!checkEmptyInput()) {
+                                var newRow = table.insertRow(table.length),
+                                    cell1 = newRow.insertCell(0), // burada cell-ler yaradir cell1 adini teyin edir ve cell1-e yeni setirin ilk cell-ini verir.
+                                    cell2 = newRow.insertCell(1),
+                                    cell3 = newRow.insertCell(2),
+                                    cell4 = newRow.insertCell(3),
+
+                                    fname = document.getElementById("fname").value, //documentin artiq deyeri var deye fname-e hazir deyeri verir.
+                                    trelative = document.getElementById("trelative").value, //
+                                    itel = document.getElementById("itel").value;
+                                    telaqe = document.getElementById("telaqe").value;
+                                                     
+                                cell1.innerHTML = fname;
+                                cell2.innerHTML = trelative;
+                                cell3.innerHTML = itel;
+                                cell4.innerHTML = telaqe;
+                                cell2.style.background = 'rgb(255 242 119)';
+
+                                // call the function to set the event to the new row
+                                selectedRowToInput();
+                            }
+                        }
+
+                        // display selected row data into input text
+                        function selectedRowToInput() {
+
+                            for (var i = 1; i < table.rows.length; i++) {
+                                table.rows[i].onclick = function () {
+                                    // get the seected row index
+                                    rIndex = this.rowIndex;
+                                    document.getElementById("fname").value = this.cells[0].innerHTML;
+                                    document.getElementById("trelative").value = this.cells[1].innerHTML;
+                                    document.getElementById("itel").value = this.cells[2].innerHTML;
+                                    document.getElementById("telaqe").value = this.cells[3].innerHTML;
+
+
+                                };
+                            }
+                        }
+                        selectedRowToInput();
+
+                        function editHtmlTbleSelectedRow() {
+                            var fname = document.getElementById("fname").value,
+                                trelative = document.getElementById("trelative").value,
+                                itel = document.getElementById("itel").value;
+                            if (!checkEmptyInput()) {
+                                table.rows[rIndex].cells[0].innerHTML = fname;
+                                table.rows[rIndex].cells[1].innerHTML = trelative;
+                                table.rows[rIndex].cells[2].innerHTML = itel;
+                                table.rows[rIndex].cells[3].innerHTML = telaqe;
+
+
+
+                            }
+                        }
+                        function differHtmlTbleSelectedRow(color) {
+                            var fname = document.getElementById("fname").value,
+                                trelative = document.getElementById("trelative").value,
+                                itel = document.getElementById("itel").value,
+                                telaqe = document.getElementById("telaqe").value;
+
+
+                            if (!checkEmptyInput()) {
+                                var table = document.getElementById("table"); // Change "your_table_id" to the ID of your table
+                                var rows = table.getElementsByTagName("tr");
+                                for (var i = 0; i < rows.length; i++) {
+                                    rows[i].style.background = ""; // Remove background color from all rows
+                                }
+                                table.rows[rIndex].style.background = color; // Set background color for the selected row
+                            }
+                        }
+
+                        function differRow() {
+                            differHtmlTbleSelectedRow('#ff5c5c');
+                        }
+                        
+
+
+
+                        function removeSelectedRow() {
+                            table.deleteRow(rIndex);
+                            // clear input text
+                            document.getElementById("fname").value = "";
+                            document.getElementById("trelative").value = "";
+                            document.getElementById("itel").value = "";
+                            document.getElementById("telaqe").value = ""
+                        }
+
+                        // function changeType() {
+                        //   var type = document.getElementById("building-type");
+                        //     if (type.value = "garden") {
+                        //    document.getElementById("rooms-number").style.display = "none";
+                        //    document.getElementById("rnumber-label").style.display = "none";
+
+                        //    }
+                        //    else if(type.value="new-building") {
+                        //     document.getElementById("rooms-number").style.display = "flex";
+                        //     document.getElementById("rnumber-label").style.display = "flex";
+
+                        //      }
+                        // }
+                        const type = document.getElementById("building-type");
+                        const rnumberLabel = document.getElementById("rnumber-label");
+                        const roomsNumber = document.getElementById("rooms_number");
+
+                        const gardenInfo = document.getElementById("garden_information")
+                        const gardenLabel = document.getElementById("area_garden_label")
+                        const mtklabel = document.getElementById("mtk_label")
+                        const mtkinfo = document.getElementById("mtk");
+                        const layiheLabel = document.getElementById("layihe_label")
+                        const layiheTeyinatLabel = document.getElementById("layihe_teyin_label")
+                        const RoomChangeLabel = document.getElementById("room_change_label")
+                        const changeRoom = document.getElementById("changing_room")
+                        const rayonlarInfo = document.getElementById("rayonlar_select")
+                        const areaInfo = document.getElementById("sahe-select")
+                        const floorNumber = document.getElementById("floor-number")
+                        const floorSize = document.getElementById("floor-size")
+                        const floorSizeLabel=document.getElementById("floor_size_label")
+                        const floorLabel = document.getElementById("floor_label")
+                        const equipmentSelect = document.getElementById("equipment_select")
+
+                        const temirTipi = document.getElementById("temir_tipi")
+                        const documentSelect = document.getElementById("document_select")
+                        const gasSelect = document.getElementById("gas_select")
+                        const qarajSelect = document.getElementById("qaraj_select")
+                        const repairLabel = document.getElementById("type_repair_label")
+                        const equipmentLabel = document.getElementById("equipment_label")
+                        const saheLabel = document.getElementById("sahe_label")
+                        const qarajLabel = document.getElementById("qaraj_label")
+                        const documentLabel = document.getElementById("document_label")
+                        const gasLabel = document.getElementById("gas_label")
+
+
+                           
+
+                        type.addEventListener("change", function (event) {
+                            if (event.target.value == 'garden') {
+                                rnumberLabel.style.display = "none";
+                                roomsNumber.style.display = "none";
+
+                                temirTipi.style.display = "none";
+                                repairLabel.style.display = "none";
+                                qarajSelect.style.display = "none";
+                                gasSelect.style.display = "none";
+                                documentSelect.style.display = "none";
+                                documentLabel.style.display = "none";
+                                floorSizeLabel.style.display = "none";
+                                equipmentLabel.style.display = "none";
+                                qarajLabel.style.display = "none";
+                                floorLabel.style.display = "none";
+                                equipmentSelect.style.display = "none";
+                                mtkinfo.style.display = "none";
+                                mtklabel.style.display = "none";
+                                areaInfo.style.display = "none";
+                                saheLabel.style.display = "none";
+                                gasLabel.style.display = "none";
+                                floorNumber.style.display = "none";
+                                RoomChangeLabel.style.display = "none";
+                                changeRoom.style.display = "none";
+                                floorSize.style.display = "none";
+                            }
+
+                            else if (event.target.value == 'new-building') {
+                                temirTipi.style.display = "block";
+                                repairLabel.style.display = "block";
+                                documentSelect.style.display = "block";
+                                documentLabel.style.display = "block";
+                                floorSizeLabel.style.display = "block";
+                                equipmentLabel.style.display = "block";
+                                floorLabel.style.display = "block";
+                                mtkinfo.style.display = "block";
+                                mtklabel.style.display = "block";
+                                areaInfo.style.display = "block";
+                                saheLabel.style.display = "block";
+                                floorNumber.style.display = "=block";
+                                RoomChangeLabel.style.display = "block";
+                                changeRoom.style.display = "block";
+                                floorSize.style.display = "block";
+                                gardenLabel.style.display = "none";
+                                gardenInfo.style.display = "none";
+                                rnumberLabel.style.display = "block";
+                                roomsNumber.style.display = "block";
+                            }
+                            else if (event.target.value == 'office') {
+                                temirTipi.style.display = "block";
+                                repairLabel.style.display = "block";
+                                qarajSelect.style.display = "block";
+                                documentSelect.style.display = "block";
+                                documentLabel.style.display = "block";
+                                floorSizeLabel.style.display = "block";
+                                equipmentLabel.style.display = "none";
+                                qarajLabel.style.display = "block";
+                                floorLabel.style.display = "block";
+                                equipmentSelect.style.display = "none";
+                                mtkinfo.style.display = "none";
+                                mtklabel.style.display = "none";
+                                areaInfo.style.display = "block";
+                                saheLabel.style.display = "block";
+                                gasLabel.style.display = "block";
+                                floorNumber.style.display = "=block";
+                                RoomChangeLabel.style.display = "none";
+                                changeRoom.style.display = "none";
+                                floorSize.style.display = "block";
+                                gardenLabel.style.display = "none";
+                                gardenInfo.style.display = "none";
+                                rnumberLabel.style.display = "block";
+                                roomsNumber.style.display = "block";
+                            }
+                            else if (event.target.value == 'old-building') {
+                                temirTipi.style.display = "block";
+                                repairLabel.style.display = "block";
+                                qarajSelect.style.display = "block";
+                                gasSelect.style.display = "block";
+                                documentSelect.style.display = "block";
+                                documentLabel.style.display = "block";
+                                floorSizeLabel.style.display = "block";
+                                equipmentLabel.style.display = "block";
+                                qarajLabel.style.display = "block";
+                                floorLabel.style.display = "block";
+                                equipmentSelect.style.display = "block";
+                                mtkinfo.style.display = "none";
+                                mtklabel.style.display = "none";
+                                areaInfo.style.display = "block";
+                                saheLabel.style.display = "block";
+                                gasLabel.style.display = "block";
+                                floorNumber.style.display = "=block";
+                                RoomChangeLabel.style.display = "block";
+                                changeRoom.style.display = "block";
+                                floorSize.style.display = "block";
+                                gardenLabel.style.display = "none";
+                                gardenInfo.style.display = "none";
+                                rnumberLabel.style.display = "block";
+                                roomsNumber.style.display = "block";
+                            }
+                            else if (event.target.value == 'qaraj') {
+                                rnumberLabel.style.display = "none";
+                                roomsNumber.style.display = "none";
+
+                                temirTipi.style.display = "block";
+                                repairLabel.style.display = "block";
+                                qarajSelect.style.display = "none";
+                                gasSelect.style.display = "none";
+                                documentSelect.style.display = "block";
+                                documentLabel.style.display = "block";
+                                floorSizeLabel.style.display = "none";
+                                equipmentLabel.style.display = "none";
+                                qarajLabel.style.display = "none";
+                                floorLabel.style.display = "none";
+                                equipmentSelect.style.display = "none";
+                                mtkinfo.style.display = "none";
+                                mtklabel.style.display = "none";
+                                areaInfo.style.display = "block";
+                                saheLabel.style.display = "block";
+                                gasLabel.style.display = "none";
+                                floorNumber.style.display = "none";
+                                RoomChangeLabel.style.display = "none";
+                                changeRoom.style.display = "none";
+                                gardenInfo.style.display = "none";
+                                gardenLabel.style.display = "none";
+                                floorSize.style.display = "none";
+                            }
+
+                        });
+                        // type.addEventListener("change", function (event) {
+                        //     if (event.target.value == 'new-building') {
+
+                        //         gardenLabel.style.display = "none";
+                        //         gardenInfo.style.display = "none";
+
+                        //     }
+
+                        //     else if (event.target.value == 'garden') {
+                        //         gardenLabel.style.display = "block";
+                        //         roomsNumber.style.display = "block";
+                        //     }
+                        //     else if (event.target.value == 'office') {
+                        //         gardenLabel.style.display = "block";
+                        //         gardenInfo.style.display = "block";
+                        //     }
+                        //     else if (event.target.value == 'qaraj') {
+                        //         gardenLabel.style.display = "block";
+                        //         gardenInfo.style.display = "block";
+                        //     }
+
+                        // });
+                        // type.addEventListener("change", function (event) {
+                        //     if (event.target.value == 'old-building') {
+
+                        //         gardenLabel.style.display = "none";
+                        //         gardenInfo.style.display = "none";
+                        //         mtkLabel.style.display = "none";
+                        //         mtkInfo.style.display = "none";
+
+                        //     }
+
+                        //     else if (event.target.value == 'garden') {
+                        //         gardenLabel.style.display = "block";
+                        //         gardenInfo.style.display = "block";
+                        //         mtkLabel.style.display = "block";
+                        //         mtkInfo.style.display = "block";
+                        //     }
+                        //     else if (event.target.value == 'office') {
+                        //         gardenLabel.style.display = "block";
+                        //         gardenInfo.style.display = "block";
+                        //         mtkLabel.style.display = "block";
+                        //         mtkInfo.style.display = "block";
+                        //     }
+                        //     else if (event.target.value == 'qaraj') {
+                        //         gardenLabel.style.display = "block";
+                        //         gardenInfo.style.display = "block";
+                        //         mtkLabel.style.display = "block";
+                        //         mtkInfo.style.display = "block";
+                        //     }
+
+                        // });
+               
+
+                          
+
+                    </script>
+
+                </body>
+                            
+                           
+                        </form>
+                   
+
+                
+           
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="web.js"></script>
+</body>
+
+</html>
